@@ -10,5 +10,11 @@ class Usuario(BaseModel):
     celular:str
     direccion:str
 
+class Estampa(BaseModel):
+    codigo_estampa:int
+    nombre_estampa:str
+    categoria_estampa:str
+    autor_estampa:str
+    imagen_estampa:bytes
 
 
