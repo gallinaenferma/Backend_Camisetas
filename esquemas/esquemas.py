@@ -15,6 +15,16 @@ class Estampa(BaseModel):
     nombre_estampa:str
     categoria_estampa:str
     autor_estampa:str
-    imagen_estampa:bytes
+    imagen_estampa:str
+
+class Camiseta(BaseModel):
+    codigo_camiseta:int
+    talla_camiseta:str
+    color_camiseta:str
+    genero_camiseta:str
+    #imagen_estampa:str
+
+
+
 
 

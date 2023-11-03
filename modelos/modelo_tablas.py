@@ -1,4 +1,4 @@
-from sqlalchemy import Table,Column,Integer,String,BINARY
+from sqlalchemy import Table,Column,Integer,String,ForeignKey
 from config_bd.db import meta,engine
 
 
@@ -18,8 +18,24 @@ Column("codigo_estampa",Integer,primary_key=True),
 Column("nombre_estampa",String),
 Column("categoria_estampa",String),
 Column("autor_estampa",String),
-Column("imagen_estampa",String) #COLUMNA NO CREADA EN EL GESTOR BD
+Column("imagen_estampa",String) 
 )
+
+camiseta =  Table("camiseta",meta,
+Column("codigo_camiseta",Integer,primary_key=True),
+Column("talla_camiseta",String),
+Column("color_camiseta",String),
+Column("genero_camiseta",String)
+)
+
+camiseta_estampada = Table("camiseta_estampada",meta,
+Column("codigo_camiseta_estampada",Integer,primary_key=True),
+Column("precio_camiseta_estampada",Integer),
+Column("codigo_camiseta",Integer,ForeignKey('camiseta.codigo_camiseta')),
+Column("codigo_estampa",Integer,ForeignKey('estampa.codigo_estampa'))
+
+)
+
 
 
 meta.create_all(engine)
