@@ -25,6 +25,13 @@ class Camiseta(BaseModel):
     #imagen_estampa:str
 
 
+class CamisetaEstampada(BaseModel):
+    codigo_camiseta_estampada:int
+    precio_camiseta_estampada:int
+    Camiseta.codigo_camiseta:int#revisar tipo de variable
+    Estampa.codigo_estampa:int#revisar tipo de variable
+
+
 
 
 

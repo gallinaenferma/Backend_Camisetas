@@ -27,7 +27,7 @@ def registrar_usuario( user : Usuario):
     nuevo_usuario["contraseña"] = f.encrypt(user.contraseña.encode("utf-8"))
     resultado = conn.execute(usuario.insert().values( nuevo_usuario))
     print(resultado)
-    return conn.execute(usuario.select().where(usuario.c.numero_documento == resultado.lastrowid)).first()
+    return  conn.execute(usuario.select().where(usuario.c.numero_documento == resultado.lastrowid)).first()
 
 @usuarios.get("/usuarios/{numero_documento}",response_model=Usuario, tags=["Usuario"])
 def busqueda_usuario_pk(numero_documento:int):
