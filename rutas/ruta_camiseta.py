@@ -18,6 +18,6 @@ def mostrar_camiseta():
 async def registrar_camiseta( shirt : Camiseta):
     nueva_camiseta = {"codigo_camiseta": shirt.codigo_camiseta ,"talla_camiseta":shirt.talla_camiseta,
     "color_camiseta": shirt.color_camiseta,"genero_camiseta":shirt.genero_camiseta}
-    resultado = conn.execute(camiseta.insert().values( nueva_camiseta))
+    resultado = conn.execute(camiseta.insert().values(nueva_camiseta))
     print(resultado)
-    return   conn.execute(camiseta.select().where(camiseta.c.codigo_camiseta == resultado.lastrowid)).first()
+    return conn.execute(camiseta.select().where(camiseta.c.codigo_camiseta == resultado.lastrowid)).first()

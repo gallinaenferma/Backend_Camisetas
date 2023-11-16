@@ -1,7 +1,7 @@
 import pytest
 from config_bd.db import conn, meta
-from modelos.modelo_usuario import usuario #tabla
-from esquemas.esquema_usuario import Usuario
+from modelos.modelo_tablas import usuario #tabla
+from esquemas.esquemas import Usuario
 from cryptography.fernet import Fernet # Cifrar contraseña
 
 key=Fernet.generate_key()
