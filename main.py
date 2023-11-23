@@ -9,7 +9,7 @@ from rutas.ruta_carrito import carritos
 app = FastAPI()
 
 origins = [
-    "http://localhost:5173/",
+    "*",
 ]
 
 app.add_middleware(
